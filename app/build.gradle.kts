@@ -1,3 +1,6 @@
+import com.example.buildsrc.Android
+import com.example.buildsrc.Libs
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -6,14 +9,14 @@ plugins {
 
 android {
     namespace = "com.example.composecodechallenge"
-    compileSdk = 33
+    compileSdk = Android.compileSdkVersion
 
     defaultConfig {
-        applicationId = "com.example.composecodechallenge"
-        minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Android.applicationId
+        minSdk = Android.minSdkVersion
+        targetSdk = Android.targetSdkVersion
+        versionCode = Android.versionCode
+        versionName = Android.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -49,20 +52,42 @@ android {
 
 dependencies {
 
-    implementation ("androidx.core:core-ktx:1.8.0")
-    implementation (platform ("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
-    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
-    implementation ("androidx.activity:activity-compose:1.5.1")
-    implementation (platform ("androidx.compose:compose-bom:2022.10.00"))
-    implementation ("androidx.compose.ui:ui")
-    implementation ("androidx.compose.ui:ui-graphics")
-    implementation ("androidx.compose.ui:ui-tooling-preview")
-    implementation ("androidx.compose.material3:material3")
-    testImplementation ("junit:junit:4.13.2")
-    androidTestImplementation ("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation (platform ("androidx.compose:compose-bom:2022.10.00"))
-    androidTestImplementation ("androidx.compose.ui:ui-test-junit4")
-    debugImplementation ("androidx.compose.ui:ui-tooling")
-    debugImplementation ("androidx.compose.ui:ui-test-manifest")
+    implementation(Libs.Jetpack.androidxCore)
+    implementation (platform(Libs.Common.kotlinBom))
+    implementation(Libs.Jetpack.lifecycleRuntime)
+    implementation(Libs.Jetpack.activityCompose)
+    implementation (platform(Libs.Jetpack.composeBom))
+    implementation(Libs.Jetpack.composeUi)
+    implementation(Libs.Jetpack.composeUiGraphics)
+    implementation(Libs.Jetpack.composeUiToolingPreview)
+    implementation(Libs.Jetpack.composeMaterial3)
+    implementation(Libs.Jetpack.composeMaterial3WindowSzeClass)
+    implementation(Libs.Jetpack.lifecycleRuntimeCompose)
+    implementation(Libs.Jetpack.navigationCompose)
+    implementation(Libs.Jetpack.trace)
+    testImplementation(Libs.Testing.junit)
+    androidTestImplementation(Libs.Testing.junitEx)
+    androidTestImplementation(Libs.Testing.espresso)
+    androidTestImplementation (platform(Libs.Jetpack.composeBom))
+    androidTestImplementation(Libs.Testing.composeUiTestJunit4)
+    debugImplementation(Libs.Jetpack.composeTooling)
+    debugImplementation(Libs.Testing.composeUiTestManifest)
+    implementation (Libs.Jetpack.workRuntime)
+    //----------------------------------------------------------------------------------------------
+    implementation(Libs.Jetpack.hiltAndroid)
+    kapt(Libs.Jetpack.hiltAndroidCompiler)
+    implementation(Libs.Jetpack.hiltWork)
+    kapt(Libs.Jetpack.hiltCompiler)
+    implementation(Libs.Jetpack.hiltNavCompose)
+    //----------------------------------------------------------------------------------------------
+    implementation(Libs.Common.stetho)
+    implementation(Libs.Common.stetho_OkHttp)
+    implementation(Libs.Common.okHttpInterceptor)
+    //----------------------------------------------------------------------------------------------
+    implementation(Libs.Common.retrofit)
+    implementation(Libs.Common.retrofitGson)
+    //----------------------------------------------------------------------------------------------
+    implementation(Libs.Common.arrowCore)
+    //----------------------------------------------------------------------------------------------
+    implementation(Libs.Common.coil)
 }
