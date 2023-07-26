@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "ComposeCodeChallenge"
-include ':app'
+include(":app")
