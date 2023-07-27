@@ -52,7 +52,9 @@ android {
 }
 
 dependencies {
-
+    implementation(project(Libs.Modules.data))
+    implementation(project(Libs.Modules.domain))
+    //---------------------------------------------------------------------------------------------
     implementation(Libs.Jetpack.androidxCore)
     implementation (platform(Libs.Common.kotlinBom))
     implementation(Libs.Jetpack.lifecycleRuntime)
