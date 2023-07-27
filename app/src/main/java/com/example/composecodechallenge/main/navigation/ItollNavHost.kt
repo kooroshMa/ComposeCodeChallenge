@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.example.composecodechallenge.features.userlist.navigation.USER_LIST_ROUTE
+import com.example.composecodechallenge.features.userlist.navigation.userListScreen
 
 /**
  * Top-level navigation graph. Navigation is organized as explained at
@@ -25,6 +26,6 @@ fun ItollNavHost(
         startDestination = startDestination,
         modifier = modifier
     ) {
-
+        userListScreen()
     }
 }
