@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ComposeCodeChallenge</string>
+    <string name="top_bar_title">Compose Code Challenge</string>
 </resources>
