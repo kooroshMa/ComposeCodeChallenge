@@ -10,9 +10,11 @@ internal fun UserListRoute(
     viewModel: UserListViewModel = hiltViewModel()
 ) {
     val searchQueryTextState = viewModel.searchQueryText.collectAsStateWithLifecycle()
+    val users = viewModel.users.collectAsStateWithLifecycle()
 
     UserListScreen(
         searchQueryTextState = searchQueryTextState,
         onSearchQueryChange = viewModel::onSearchQueryChange,
+        users = users.value,
     )
 }
