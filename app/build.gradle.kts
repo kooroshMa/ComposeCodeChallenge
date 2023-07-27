@@ -5,6 +5,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id ("dagger.hilt.android.plugin")
 }
 
 android {
@@ -22,6 +23,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        buildConfigField("String", "BASE_URL", "\"https://api.github.com\"")
     }
 
     buildTypes {
@@ -51,7 +53,9 @@ android {
 }
 
 dependencies {
-
+    implementation(project(Libs.Modules.data))
+    implementation(project(Libs.Modules.domain))
+    //---------------------------------------------------------------------------------------------
     implementation(Libs.Jetpack.androidxCore)
     implementation (platform(Libs.Common.kotlinBom))
     implementation(Libs.Jetpack.lifecycleRuntime)
