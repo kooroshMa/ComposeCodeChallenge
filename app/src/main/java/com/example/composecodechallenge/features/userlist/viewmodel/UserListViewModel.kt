@@ -4,13 +4,16 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.composecodechallenge.features.userlist.model.UserListItem
+import com.example.composecodechallenge.features.userlist.model.mapper.toUserItem
 import com.example.domain.model.error.Error
 import com.example.domain.model.userlist.UserModel
 import com.example.domain.usecase.GetUsersUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -32,7 +35,11 @@ class UserListViewModel @Inject constructor(
     }
 
     private fun onSuccessResponse(users: List<UserModel>) {
-
+        viewModelScope.launch {
+            withContext(Dispatchers.Default) {
+                _users.value = users.map { it.toUserItem() }
+            }
+        }
     }
 
     private fun onErrorResponse(error: Error) {
