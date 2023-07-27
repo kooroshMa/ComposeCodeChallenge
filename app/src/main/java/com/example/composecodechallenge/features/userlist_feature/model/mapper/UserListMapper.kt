@@ -1,6 +1,6 @@
-package com.example.composecodechallenge.features.userlist.model.mapper
+package com.example.composecodechallenge.features.userlist_feature.model.mapper
 
-import com.example.composecodechallenge.features.userlist.model.UserListItem
+import com.example.composecodechallenge.features.userlist_feature.model.UserListItem
 import com.example.domain.model.userlist.UserModel
 
 internal fun UserModel.toUserItem(): UserListItem {

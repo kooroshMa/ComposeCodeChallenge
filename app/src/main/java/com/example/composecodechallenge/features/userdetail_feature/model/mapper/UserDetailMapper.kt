@@ -1,6 +1,6 @@
-package com.example.composecodechallenge.features.userdetail.model.mapper
+package com.example.composecodechallenge.features.userdetail_feature.model.mapper
 
-import com.example.composecodechallenge.features.userdetail.model.UserDetailItem
+import com.example.composecodechallenge.features.userdetail_feature.model.UserDetailItem
 import com.example.domain.model.userdetail.UserDetailModel
 
 internal fun UserDetailModel.toUserDetailItem(): UserDetailItem {

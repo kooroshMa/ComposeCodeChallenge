@@ -1,9 +1,9 @@
-package com.example.composecodechallenge.features.userlist.ui
+package com.example.composecodechallenge.features.userlist_feature.ui
 
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.composecodechallenge.features.userlist.viewmodel.UserListViewModel
+import com.example.composecodechallenge.features.userlist_feature.viewmodel.UserListViewModel
 
 @Composable
 internal fun UserListRoute(

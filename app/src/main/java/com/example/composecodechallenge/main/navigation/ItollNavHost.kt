@@ -4,9 +4,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.example.composecodechallenge.features.userdetail.navigation.userDetailGraph
-import com.example.composecodechallenge.features.userlist.navigation.USER_LIST_ROUTE
-import com.example.composecodechallenge.features.userlist.navigation.userListScreen
+import com.example.composecodechallenge.features.userdetail_feature.navigation.userDetailGraph
+import com.example.composecodechallenge.features.userlist_feature.navigation.USER_LIST_ROUTE
+import com.example.composecodechallenge.features.userlist_feature.navigation.userListScreen
 
 /**
  * Top-level navigation graph. Navigation is organized as explained at

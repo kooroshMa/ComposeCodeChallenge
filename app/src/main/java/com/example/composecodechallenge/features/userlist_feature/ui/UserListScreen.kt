@@ -1,4 +1,4 @@
-package com.example.composecodechallenge.features.userlist.ui
+package com.example.composecodechallenge.features.userlist_feature.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -33,7 +33,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import coil.compose.rememberAsyncImagePainter
 import com.example.composecodechallenge.R
-import com.example.composecodechallenge.features.userlist.model.UserListItem
+import com.example.composecodechallenge.features.userlist_feature.model.UserListItem
 import com.example.composecodechallenge.main.ui.common.SimpleTopAppBar
 import com.example.composecodechallenge.main.ui.theme.ThemePreview
 import com.example.composecodechallenge.main.ui.theme.space
