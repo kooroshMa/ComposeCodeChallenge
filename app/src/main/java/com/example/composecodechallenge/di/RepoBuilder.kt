@@ -1,6 +1,7 @@
 package com.example.composecodechallenge.di
 
 import com.example.data.repository.GetUsersRepoImpl
+import com.example.domain.repository.GetUserDetailRepository
 import com.example.domain.repository.GetUsersRepository
 import dagger.Binds
 import dagger.Module
@@ -13,5 +14,8 @@ abstract class RepositoryBuilder {
 
     @Binds
     abstract fun bindUserRepo(userRepoImpl: GetUsersRepoImpl): GetUsersRepository
+
+    @Binds
+    abstract fun bindUserDetailRepo(userDetailRepoImpl: GetUsersRepoImpl): GetUserDetailRepository
 
 }
