@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "ComposeCodeChallenge"
 include(":app")
 include(":core:domain")
+include(":core:data")
