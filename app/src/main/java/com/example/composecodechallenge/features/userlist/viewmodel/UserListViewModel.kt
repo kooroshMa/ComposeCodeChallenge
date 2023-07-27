@@ -52,6 +52,12 @@ class UserListViewModel @Inject constructor(
 
     private fun getUsers(query: String) {
         searchJob?.cancel()
+
+        if (query.isBlank()) {
+            _users.value = emptyList()
+            return
+        }
+
         searchJob = viewModelScope.launch {
              getUsersUseCase.getUsers(query).fold(
                 ifRight = ::onSuccessResponse,
