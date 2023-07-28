@@ -55,5 +55,8 @@ object Libs {
         //----------
         const val composeUiTestManifest = "androidx.compose.ui:ui-test-manifest"
         const val composeUiTestJunit4 = "androidx.compose.ui:ui-test-junit4"
+        //----------
+        const val uiAnimatorTest = "androidx.test.uiautomator:uiautomator:${Versions.uiAnimatorTest}"
+        const val macroBenchMark = "androidx.benchmark:benchmark-macro-junit4:${Versions.macroBenchmark}"
     }
 }
