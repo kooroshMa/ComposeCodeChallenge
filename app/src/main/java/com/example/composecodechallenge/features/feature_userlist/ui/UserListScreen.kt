@@ -41,7 +41,7 @@ import com.example.composecodechallenge.main.ui.theme.space
 @Composable
 internal fun UserListScreen(
     modifier: Modifier = Modifier,
-    searchQueryTextState: State<String>,
+    searchQueryTextState: State<String?>,
     onSearchQueryChange: (String) -> Unit,
     users: List<UserItem>,
     navigateToUserDetails: (String) -> Unit,
@@ -65,7 +65,7 @@ internal fun UserListScreen(
 @Composable
 fun UserListScreenContent(
     modifier: Modifier = Modifier,
-    searchQueryTextState: State<String>,
+    searchQueryTextState: State<String?>,
     onSearchQueryChange: (String) -> Unit,
     users: List<UserItem>,
     navigateToUserDetails: (String) -> Unit,
@@ -126,11 +126,11 @@ fun UserListScreenContent(
 
 @Composable
 internal fun TextField(
-    searchQueryTextState: State<String>,
+    searchQueryTextState: State<String?>,
     onSearchQueryChange: (String) -> Unit
 ) {
     OutlinedTextField(
-        value = searchQueryTextState.value,
+        value = searchQueryTextState.value.orEmpty(),
         onValueChange = {
             onSearchQueryChange(it)
         },
