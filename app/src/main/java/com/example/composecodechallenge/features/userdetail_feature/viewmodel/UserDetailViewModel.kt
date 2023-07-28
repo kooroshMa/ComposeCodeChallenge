@@ -1,6 +1,7 @@
 package com.example.composecodechallenge.features.userdetail_feature.viewmodel
 
 import android.util.Log
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.composecodechallenge.features.userdetail_feature.model.UserDetailItem
@@ -19,13 +20,20 @@ import javax.inject.Inject
 @HiltViewModel
 class UserDetailViewModel @Inject constructor(
     private val userDetailUseCase: UserDetailUseCase,
+    savedStateHandle: SavedStateHandle,
 ) :
     ViewModel() {
+
+    private val userName: String = checkNotNull(savedStateHandle["userName"])
 
     private val _userDetail = MutableStateFlow(UserDetailItem(""))
     val userDetail = _userDetail.asStateFlow()
 
-    private fun getUserDetail(userName: String) {
+    init {
+        getUserDetail()
+    }
+
+    private fun getUserDetail() {
         viewModelScope.launch {
             userDetailUseCase.getUserDetail(userName).fold(
                 ifRight = ::onSuccessResponse,
