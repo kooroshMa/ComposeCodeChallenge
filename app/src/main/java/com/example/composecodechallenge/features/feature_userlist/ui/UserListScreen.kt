@@ -1,4 +1,4 @@
-package com.example.composecodechallenge.features.userlist_feature.ui
+package com.example.composecodechallenge.features.feature_userlist.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -33,7 +33,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import coil.compose.rememberAsyncImagePainter
 import com.example.composecodechallenge.R
-import com.example.composecodechallenge.features.userlist_feature.model.UserListItem
+import com.example.composecodechallenge.features.feature_userlist.model.UserItem
 import com.example.composecodechallenge.main.ui.common.SimpleTopAppBar
 import com.example.composecodechallenge.main.ui.theme.ThemePreview
 import com.example.composecodechallenge.main.ui.theme.space
@@ -41,9 +41,9 @@ import com.example.composecodechallenge.main.ui.theme.space
 @Composable
 internal fun UserListScreen(
     modifier: Modifier = Modifier,
-    searchQueryTextState: State<String>,
+    searchQueryTextState: State<String?>,
     onSearchQueryChange: (String) -> Unit,
-    users: List<UserListItem>,
+    users: State<List<UserItem>>,
     navigateToUserDetails: (String) -> Unit,
 ) {
     Scaffold(
@@ -65,9 +65,9 @@ internal fun UserListScreen(
 @Composable
 fun UserListScreenContent(
     modifier: Modifier = Modifier,
-    searchQueryTextState: State<String>,
+    searchQueryTextState: State<String?>,
     onSearchQueryChange: (String) -> Unit,
-    users: List<UserListItem>,
+    users: State<List<UserItem>>,
     navigateToUserDetails: (String) -> Unit,
 ) {
     Column(
@@ -85,7 +85,7 @@ fun UserListScreenContent(
             verticalArrangement = Arrangement.spacedBy(MaterialTheme.space.sMedium),
 
             ) {
-            items(users, key = {
+            items(users.value, key = {
                 it.id
             }) {
                 Card(
@@ -126,11 +126,11 @@ fun UserListScreenContent(
 
 @Composable
 internal fun TextField(
-    searchQueryTextState: State<String>,
+    searchQueryTextState: State<String?>,
     onSearchQueryChange: (String) -> Unit
 ) {
     OutlinedTextField(
-        value = searchQueryTextState.value,
+        value = searchQueryTextState.value.orEmpty(),
         onValueChange = {
             onSearchQueryChange(it)
         },
@@ -151,7 +151,7 @@ internal fun UserListPreview() {
     UserListScreen(
         searchQueryTextState = mutableStateOf("Search..."),
         onSearchQueryChange = {},
-        users = emptyList(),
+        users = mutableStateOf(emptyList()),
         navigateToUserDetails = {}
     )
 }

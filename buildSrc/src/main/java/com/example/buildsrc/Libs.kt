@@ -50,6 +50,8 @@ object Libs {
         const val junitEx = "androidx.test.ext:junit:${Versions.junit}"
         const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
         const val mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:${Versions.mockitoKotlin}"
+        const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
+
         //----------
         const val composeUiTestManifest = "androidx.compose.ui:ui-test-manifest"
         const val composeUiTestJunit4 = "androidx.compose.ui:ui-test-junit4"
