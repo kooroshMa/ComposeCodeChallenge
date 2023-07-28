@@ -1,4 +1,4 @@
-package com.example.composecodechallenge.features.userdetail_feature.ui
+package com.example.composecodechallenge.features.feature_userdetail.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -11,7 +11,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import coil.compose.rememberAsyncImagePainter
-import com.example.composecodechallenge.features.userdetail_feature.model.UserDetailItem
+import com.example.composecodechallenge.features.feature_userdetail.model.UserDetailItem
 import com.example.composecodechallenge.main.ui.common.SimpleTopAppBar
 import com.example.composecodechallenge.main.ui.theme.ThemePreview
 

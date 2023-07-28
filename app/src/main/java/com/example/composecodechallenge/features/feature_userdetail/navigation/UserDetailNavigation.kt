@@ -1,4 +1,4 @@
-package com.example.composecodechallenge.features.userdetail_feature.navigation
+package com.example.composecodechallenge.features.feature_userdetail.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
@@ -6,8 +6,8 @@ import androidx.navigation.NavOptions
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.example.composecodechallenge.features.userdetail_feature.ui.UserListRoute
-import com.example.composecodechallenge.features.userlist_feature.navigation.USER_ROUTE_PREFIX
+import com.example.composecodechallenge.features.feature_userdetail.ui.UserListRoute
+import com.example.composecodechallenge.features.feature_userlist.navigation.USER_ROUTE_PREFIX
 
 private const val USER_DETAILS_ROUTE = "$USER_ROUTE_PREFIX/detail"
 const val USER_NAME = "userName"

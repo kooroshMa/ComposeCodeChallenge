@@ -1,9 +1,9 @@
-package com.example.composecodechallenge.features.userlist_feature.ui
+package com.example.composecodechallenge.features.feature_userlist.ui
 
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.composecodechallenge.features.userlist_feature.viewmodel.UserListViewModel
+import com.example.composecodechallenge.features.feature_userlist.viewmodel.UserListViewModel
 
 @Composable
 internal fun UserListRoute(
@@ -11,7 +11,7 @@ internal fun UserListRoute(
     navigateToUserDetails: (String) -> Unit,
 ) {
     val searchQueryTextState = viewModel.searchQueryText.collectAsStateWithLifecycle()
-    val users = viewModel.users.collectAsStateWithLifecycle()
+    val users = viewModel.usersState.collectAsStateWithLifecycle()
 
     UserListScreen(
         searchQueryTextState = searchQueryTextState,
