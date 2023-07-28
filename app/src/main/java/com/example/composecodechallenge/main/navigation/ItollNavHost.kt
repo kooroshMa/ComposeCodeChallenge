@@ -27,7 +27,7 @@ fun ItollNavHost(
         startDestination = startDestination,
         modifier = modifier
     ) {
-        userListScreen()
+        userListScreen(navController)
         userDetailGraph(navController)
     }
 }

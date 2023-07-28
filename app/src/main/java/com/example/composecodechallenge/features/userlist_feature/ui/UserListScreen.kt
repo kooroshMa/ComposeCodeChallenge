@@ -44,6 +44,7 @@ internal fun UserListScreen(
     searchQueryTextState: State<String>,
     onSearchQueryChange: (String) -> Unit,
     users: List<UserListItem>,
+    navigateToUserDetails: (String) -> Unit,
 ) {
     Scaffold(
         topBar = {
@@ -55,6 +56,7 @@ internal fun UserListScreen(
                 searchQueryTextState = searchQueryTextState,
                 onSearchQueryChange = onSearchQueryChange,
                 users = users,
+                navigateToUserDetails,
             )
         }
     )
@@ -66,6 +68,7 @@ fun UserListScreenContent(
     searchQueryTextState: State<String>,
     onSearchQueryChange: (String) -> Unit,
     users: List<UserListItem>,
+    navigateToUserDetails: (String) -> Unit,
 ) {
     Column(
         modifier = modifier
@@ -89,7 +92,7 @@ fun UserListScreenContent(
                     modifier = Modifier
                         .fillMaxSize()
                         .clickable {
-
+                            navigateToUserDetails.invoke(it.userName)
                         },
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -149,5 +152,6 @@ internal fun UserListPreview() {
         searchQueryTextState = mutableStateOf("Search..."),
         onSearchQueryChange = {},
         users = emptyList(),
+        navigateToUserDetails = {}
     )
 }

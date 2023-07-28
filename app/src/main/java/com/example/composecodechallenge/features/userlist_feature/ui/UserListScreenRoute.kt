@@ -7,7 +7,8 @@ import com.example.composecodechallenge.features.userlist_feature.viewmodel.User
 
 @Composable
 internal fun UserListRoute(
-    viewModel: UserListViewModel = hiltViewModel()
+    viewModel: UserListViewModel = hiltViewModel(),
+    navigateToUserDetails: (String) -> Unit,
 ) {
     val searchQueryTextState = viewModel.searchQueryText.collectAsStateWithLifecycle()
     val users = viewModel.users.collectAsStateWithLifecycle()
@@ -16,5 +17,6 @@ internal fun UserListRoute(
         searchQueryTextState = searchQueryTextState,
         onSearchQueryChange = viewModel::onSearchQueryChange,
         users = users.value,
+        navigateToUserDetails = navigateToUserDetails,
     )
 }
