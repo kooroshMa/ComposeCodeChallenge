@@ -8,7 +8,7 @@ import com.example.composecodechallenge.features.feature_userdetail.model.UserDe
 import com.example.composecodechallenge.features.feature_userdetail.model.mapper.toUserDetailItem
 import com.example.domain.model.error.Error
 import com.example.domain.model.userdetail.UserDetailModel
-import com.example.domain.usecase.UserDetailUseCase
+import com.example.domain.usecase.GetUserDetailUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -19,7 +19,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class UserDetailViewModel @Inject constructor(
-    private val userDetailUseCase: UserDetailUseCase,
+    private val getUserDetailUseCase: GetUserDetailUseCase,
     savedStateHandle: SavedStateHandle,
 ) :
     ViewModel() {
@@ -35,7 +35,7 @@ class UserDetailViewModel @Inject constructor(
 
     private fun getUserDetail() {
         viewModelScope.launch {
-            userDetailUseCase.getUserDetail(userName).fold(
+            getUserDetailUseCase.getUserDetail(userName).fold(
                 ifRight = ::onSuccessResponse,
                 ifLeft = ::onErrorResponse
             )
