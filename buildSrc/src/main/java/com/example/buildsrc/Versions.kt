@@ -23,4 +23,5 @@ object Versions {
     const val junit = "4.13.2"
     const val junitEx = "1.1.5"
     const val espresso = "3.5.1"
+    const val material = "1.9.0"
 }
