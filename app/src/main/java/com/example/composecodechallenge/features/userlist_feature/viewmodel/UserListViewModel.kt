@@ -1,10 +1,10 @@
-package com.example.composecodechallenge.features.userlist.viewmodel
+package com.example.composecodechallenge.features.userlist_feature.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.composecodechallenge.features.userlist.model.UserListItem
-import com.example.composecodechallenge.features.userlist.model.mapper.toUserItem
+import com.example.composecodechallenge.features.userlist_feature.model.UserListItem
+import com.example.composecodechallenge.features.userlist_feature.model.mapper.toUserItem
 import com.example.domain.model.error.Error
 import com.example.domain.model.userlist.UserModel
 import com.example.domain.usecase.GetUsersUseCase
