@@ -94,4 +94,6 @@ dependencies {
     implementation(Libs.Common.arrowCore)
     //----------------------------------------------------------------------------------------------
     implementation(Libs.Common.coil)
+    //----------------------------------------------------------------------------------------------
+    implementation(Libs.Common.material)
 }

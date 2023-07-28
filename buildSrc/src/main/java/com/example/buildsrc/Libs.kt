@@ -42,6 +42,7 @@ object Libs {
         const val stetho_OkHttp = "com.facebook.stetho:stetho-okhttp3:${Versions.stetho}"
         const val arrowCore = "io.arrow-kt:arrow-core:${Versions.arrow}"
         const val coil = "io.coil-kt:coil-compose:${Versions.coil}"
+        const val material = "com.google.android.material:material:${Versions.material}"
     }
 
     object Testing {
