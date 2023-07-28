@@ -7,7 +7,7 @@ import com.example.domain.model.userdetail.UserDetailModel
 import com.example.domain.repository.GetUserDetailRepository
 import javax.inject.Inject
 
-class UserDetailUseCase @Inject constructor(
+class GetUserDetailUseCase @Inject constructor(
     private val UserDetailRepository: GetUserDetailRepository,
     errorMapper: ErrorMapper
 ) : BaseUseCase(errorMapper) {
