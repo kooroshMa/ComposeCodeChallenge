@@ -69,7 +69,11 @@ dependencies {
     implementation(Libs.Jetpack.lifecycleRuntimeCompose)
     implementation(Libs.Jetpack.navigationCompose)
     implementation(Libs.Jetpack.trace)
+
     testImplementation(Libs.Testing.junit)
+    testImplementation(Libs.Testing.mockitoKotlin)
+    testImplementation(Libs.Testing.coroutinesTest)
+
     androidTestImplementation(Libs.Testing.junitEx)
     androidTestImplementation(Libs.Testing.espresso)
     androidTestImplementation (platform(Libs.Jetpack.composeBom))
