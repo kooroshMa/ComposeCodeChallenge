@@ -16,7 +16,7 @@ internal fun UserListRoute(
     UserListScreen(
         searchQueryTextState = searchQueryTextState,
         onSearchQueryChange = viewModel::onSearchQueryChange,
-        users = users.value,
+        users = users,
         navigateToUserDetails = navigateToUserDetails,
     )
 }

@@ -43,7 +43,7 @@ internal fun UserListScreen(
     modifier: Modifier = Modifier,
     searchQueryTextState: State<String?>,
     onSearchQueryChange: (String) -> Unit,
-    users: List<UserItem>,
+    users: State<List<UserItem>>,
     navigateToUserDetails: (String) -> Unit,
 ) {
     Scaffold(
@@ -67,7 +67,7 @@ fun UserListScreenContent(
     modifier: Modifier = Modifier,
     searchQueryTextState: State<String?>,
     onSearchQueryChange: (String) -> Unit,
-    users: List<UserItem>,
+    users: State<List<UserItem>>,
     navigateToUserDetails: (String) -> Unit,
 ) {
     Column(
@@ -85,7 +85,7 @@ fun UserListScreenContent(
             verticalArrangement = Arrangement.spacedBy(MaterialTheme.space.sMedium),
 
             ) {
-            items(users, key = {
+            items(users.value, key = {
                 it.id
             }) {
                 Card(
@@ -151,7 +151,7 @@ internal fun UserListPreview() {
     UserListScreen(
         searchQueryTextState = mutableStateOf("Search..."),
         onSearchQueryChange = {},
-        users = emptyList(),
+        users = mutableStateOf(emptyList()),
         navigateToUserDetails = {}
     )
 }
