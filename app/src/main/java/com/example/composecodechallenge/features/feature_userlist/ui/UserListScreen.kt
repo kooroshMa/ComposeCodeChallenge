@@ -28,6 +28,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -81,7 +82,8 @@ fun UserListScreenContent(
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
-                .weight(1f),
+                .weight(1f)
+                .testTag("list_item"),
             verticalArrangement = Arrangement.spacedBy(MaterialTheme.space.sMedium),
 
             ) {
@@ -142,6 +144,7 @@ internal fun TextField(
         modifier = Modifier
             .padding(MaterialTheme.space.small)
             .fillMaxWidth()
+            .testTag("search_users")
     )
 }
 
