@@ -11,6 +11,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import com.example.composecodechallenge.R
 import com.example.composecodechallenge.main.ui.theme.ThemePreview
@@ -37,7 +38,7 @@ fun SimpleTopAppBar(
         navigationIcon = {
             IconButton(onClick = onBackClick) {
                 Icon(
-                    modifier = Modifier.size(MaterialTheme.space.xMedium),
+                    modifier = Modifier.size(MaterialTheme.space.xMedium).testTag("back"),
                     painter = painterResource(id = R.drawable.ic_back),
                     contentDescription = "back",
                     tint = MaterialTheme.colorScheme.onBackground

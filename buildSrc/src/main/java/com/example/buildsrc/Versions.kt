@@ -25,4 +25,6 @@ object Versions {
     const val espresso = "3.5.1"
     const val material = "1.9.0"
     const val coroutinesTest = "1.7.3"
+    const val uiAnimatorTest = "2.2.0"
+    const val macroBenchmark = "1.1.1"
 }
