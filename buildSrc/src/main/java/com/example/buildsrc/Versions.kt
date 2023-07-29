@@ -26,5 +26,5 @@ object Versions {
     const val material = "1.9.0"
     const val coroutinesTest = "1.7.3"
     const val uiAnimatorTest = "2.2.0"
-    const val macroBenchmark = "1.2.0-beta01"
+    const val macroBenchmark = "1.1.1"
 }
