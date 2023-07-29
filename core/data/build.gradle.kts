@@ -46,4 +46,5 @@ dependencies {
     implementation(Libs.Common.retrofitGson)
     testImplementation(Libs.Testing.junit)
     testImplementation(Libs.Testing.mockitoKotlin)
+    testImplementation(Libs.Testing.coroutinesTest)
 }
