@@ -1,4 +1,4 @@
-package com.example.itoll.util
+package com.example.composecodechallenge.util
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
