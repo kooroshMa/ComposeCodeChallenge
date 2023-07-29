@@ -1,3 +1,4 @@
+import com.android.build.api.dsl.ManagedVirtualDevice
 import com.example.buildsrc.Libs
 
 plugins {
@@ -23,6 +24,17 @@ android {
         targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    // This must point to the app module.
+    targetProjectPath = ":app"
+
+    testOptions.managedDevices.devices {
+        create<ManagedVirtualDevice>("pixel6Api30") {
+            device = "Pixel 6"
+            apiLevel = 30
+            systemImageSource = "aosp"
+        }
     }
 
     buildTypes {
